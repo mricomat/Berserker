@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/first_group"
+        android:checkableBehavior="single">
+        <item android:id="@+id/home_item_nav"
+            android:icon="@drawable/home_icon_grey"
+            android:title="Home"/>
+        <item android:id="@+id/box_item_nav"
+            android:icon="@drawable/dumbell_icon_grey"
+            android:title="BOX"/>
+        <item android:id="@+id/profile_item_nav"
+            android:icon="@drawable/profile_icon_grey"
+            android:title="Profile"/>
+    </group>
+
+    <group
+        android:id="@+id/second_group"
+        android:checkableBehavior="single">
+        <item android:id="@+id/ranking_item_nav"
+            android:icon="@drawable/ranking_icon_grey"
+            android:title="Ranking"/>
+        <item android:id="@+id/exercises_item_nav"
+            android:icon="@drawable/book_icon_grey"
+            android:title="Exercises library"/>
+        <item android:id="@+id/wods_item_nav"
+            android:icon="@drawable/board_icon_grey"
+            android:title="WODS"/>
+    </group>
+
+    <group
+        android:id="@+id/third_group"
+        android:checkableBehavior="single">
+        <item android:id="@+id/settings_item_nav"
+
+            android:title="Settings"/>
+        <item android:id="@+id/about_item_nav"
+
+            android:title="About us"/>
+    </group>
+</menu>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pattern_back_login_x" />
+
+    <LinearLayout
+        android:id="@+id/login_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="212dp"
+            android:layout_height="182dp"
+            android:layout_marginTop="31dp"
+            android:src="@drawable/crossfit_icon" />
+
+        <ImageView
+            android:layout_width="269dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/berserker_title" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/edit_text_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="140dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Dummy item to prevent
+         EditText from receiving focus -->
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="0px"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+        <EditText
+            android:id="@+id/email_ed"
+            android:layout_width="279dp"
+            android:layout_height="51dp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/white"
+            android:hint="@string/login"
+            android:inputType="textEmailAddress"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:textColorHint="@color/grey_hint"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/password_ed"
+            android:layout_width="279dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/button_bg"
+            android:backgroundTint="@color/white"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:textColorHint="@color/grey_hint"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <io.rmiri.buttonloading.ButtonLoading
+        android:id="@+id/sign_in_button"
+        android:layout_width="279dp"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:textAllCaps="false"
+        app:BL_backgroundColor="#00D8C9C9"
+        app:BL_circleColor="@color/red_border_button"
+        app:BL_circleColorSecond="@color/red_border_button"
+        app:BL_enable="true"
+        app:BL_stateShow="normal"
+        app:BL_text="Sign in"
+        app:BL_textColor="@color/white"
+        app:BL_textSize="18sp"
+        tools:background="@color/red_border_button" />
+
+
+    <TextView
+        android:id="@+id/forgot_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Forgot password?"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</RelativeLayout>

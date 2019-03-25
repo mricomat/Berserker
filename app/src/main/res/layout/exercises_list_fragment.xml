@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/exercise_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:clipToPadding="false"
+        tools:layoutManager="android.support.v7.widget.GridLayoutManager"
+        tools:listitem="@layout/exercises_list_square_item"
+        tools:spanCount="2">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floating_confirmation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/red_border_button"
+        android:src="@drawable/tick_icon"
+        app:backgroundTint="@color/red_border_button"
+        app:fabSize="normal" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/change_layout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/floating_confirmation_button"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="-7dp"
+        android:layout_toStartOf="@+id/floating_confirmation_button"
+        android:backgroundTint="@color/red_theme"
+        android:src="@drawable/cub_icon"
+        app:backgroundTint="@color/red_theme"
+        app:fabSize="mini" />
+</RelativeLayout>

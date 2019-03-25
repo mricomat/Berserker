@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Berserker</string>
+
+    <!--Login-->
+    <string name="login">Email</string>
+    <string name="password">Password</string>
+
+    <!--Login Validation-->
+    <string name="empty_email">Please provide a non empty email.</string>
+    <string name="invalid_email">Please provide a valid email.</string>
+    <string name="empty_password">Please provide a non empty password.</string>
+    <string name="email_password_wrong">Email or Password wrong</string>
+
+    <!--WOD-->
+    <string name="title_wod_default">FOR TIME</string>
+    <string name="type_rx">RX</string>
+    <string name="type_scaled">SCALED</string>
+
+    <!--Error-->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="unknown_error_title">Unknown Error</string>
+    <string name="unknown_error_detail">Something wrong happened!</string>
+    <string name="continue_button">Continue</string>
+    <string name="token_error_title">Session Expired</string>
+    <string name="token_error_detail">Please, press continue to logging again</string>
+    <string name="connection_error_title">Connection Error</string>
+    <string name="connection_error_detail">Internet connection lost!</string>
+
+    <!--List New Wod-->
+    <string name="open_strength_title">Open / Strength</string>
+    <string name="open_strength_detail">Registra tus entrenamientos en Open /Fuerza para llevar un registro de tus pesos máximos en 1, 3, 5 y 10RM. </string>
+    <string name="for_time_title">For Time</string>
+    <string name="for_time_detail">Completa los ejercicios seleccionados en el menor tiempo posible </string>
+    <string name="reps_for_time_title">Reps For Time / Ladder</string>
+    <string name="reps_for_time_detail">Completa las mismas repeticiones de cada ejercicio en el orden seleccionado (21 - 15 - 9, 12 -9 -6…)</string>
+    <string name="amrap_title">AMRAP</string>
+    <string name="amrap_detail">Completa el mayor número de rondas de una serie de ejercicios en un tiempo determinado.</string>
+    <string name="emon_title">EMON</string>
+    <string name="emon_detail">Completa todos los ejercicios por cada minuto, durante el mayor número de minutos posible</string>
+    <string name="tabata_title">Tabata</string>
+    <string name="tabata_detail">Completa todos los ejercicios por cada minuto, durante el mayor número de minutos posible</string>
+</resources>

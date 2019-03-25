@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="red_theme">#D9534F</color>
+    <color name="orange_theme">#FFAF43</color>
+    <color name="redFire">#9F1F24</color>
+    <color name="redDarkFire">#821A1E</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="grey_dirty">#423838</color>
+    <color name="red_border_button">#D43F3A</color>
+    <color name="red_title_item">#DA1919</color>
+    <color name="grey_hint">#302F2F</color>
+    <color name="grey_icon_default">#787878</color>
+    <color name="scaled_wod">#DF9434</color>
+    <color name="ranked">#551E1E</color>
+</resources>
