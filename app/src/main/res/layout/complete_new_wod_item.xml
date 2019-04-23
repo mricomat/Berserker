@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="@color/grey_hint">
+
+    <LinearLayout
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_divider"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/type_wod_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@+id/level_wod_container"
+            android:fontFamily="@font/roboto_black"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:text="For Time" />
+
+        <LinearLayout
+            android:id="@+id/level_wod_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <Button
+                android:id="@+id/scaled_button"
+                android:layout_width="55dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/circular_orange_border"
+                android:text="Scaled"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/rx_button"
+                android:layout_width="55dp"
+                android:layout_height="26dp"
+                android:background="@drawable/circular_red_filled"
+                android:text="RX"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/options_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="25sp"
+            android:src="@drawable/three_points_icon" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/exercises_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_container"
+        android:layout_marginStart="17sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="25dp"
+        tools:listitem="@layout/complete_exercises_item">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/exercises_recycler_view"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/add_round_button"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/sign_in_button"
+            android:backgroundTint="@color/red_theme"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Add Round"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/result_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/time_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/circular_white_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="00 : 00"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/round_ed"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/circular_white_border"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="0 Rounds"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/floating_wod_completed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/x_icon"
+                    app:backgroundTint="@color/orange_theme"
+                    app:fabSize="mini" />
+
+                <TextView
+                    android:id="@+id/wod_completed_text"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center_vertical"
+                    android:text="Wod Not Completed"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

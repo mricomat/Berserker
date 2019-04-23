@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:background="@color/grey_hint">
+
+    <LinearLayout
+        android:id="@+id/round_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/round_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_black"
+            android:textColor="@color/red_theme"
+            android:textSize="17sp"
+            tools:text="Round 1" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/data_item_container"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <TextView
+            android:id="@+id/name_exercise_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            tools:text="Pull-ups" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/reps_value_text"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:background="@drawable/circular_white_border"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="0"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:text="Reps" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/options_button"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/three_points_icon" />
+
+    </RelativeLayout>
+
+</LinearLayout>
