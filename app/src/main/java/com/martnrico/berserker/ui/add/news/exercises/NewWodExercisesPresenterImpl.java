@@ -1,12 +1,14 @@
 package com.martnrico.berserker.ui.addwod.news.exercises;
 
 import com.martnrico.berserker.data.DataManager;
+import com.martnrico.berserker.data.network.model.Entry.WodModel;
 import com.martnrico.berserker.data.network.model.ExerciseModel;
 import com.martnrico.berserker.ui.base.BasePresenterImpl;
 import com.martnrico.berserker.utils.DisposableManager;
 import com.martnrico.berserker.utils.MockData;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -53,7 +55,12 @@ public class NewWodExercisesPresenterImpl<V extends NewWodExercisesView> extends
 
     @Override
     public void onConfirmationButtonClick() {
-        // TODO Go to next fragment
+        WodModel wodModel = new WodModel();
+        wodModel.setTypeWod(mTypeWod);
+        wodModel.setDate(Calendar.getInstance().getTimeInMillis());
+        wodModel.setExerciseList(mExercisesNamesSelected);
+
+        getMvpView().navigateToCompleteNewWodFragment(wodModel);
     }
 
     @Override

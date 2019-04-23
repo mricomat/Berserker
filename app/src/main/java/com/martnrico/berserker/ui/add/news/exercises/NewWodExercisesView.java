@@ -1,5 +1,6 @@
 package com.martnrico.berserker.ui.addwod.news.exercises;
 
+import com.martnrico.berserker.data.network.model.Entry.WodModel;
 import com.martnrico.berserker.data.network.model.ExerciseModel;
 import com.martnrico.berserker.ui.base.BaseView;
 
@@ -13,4 +14,6 @@ public interface NewWodExercisesView extends BaseView {
     void showExercisesList(List<ExerciseModel> mExerciseList);
 
     void changeTitleBar(String typeWod);
+
+    void navigateToCompleteNewWodFragment(WodModel wodModel);
 }

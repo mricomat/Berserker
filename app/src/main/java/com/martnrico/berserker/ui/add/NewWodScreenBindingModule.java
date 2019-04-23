@@ -1,8 +1,8 @@
-package com.martnrico.berserker.ui.addwod.news;
+package com.martnrico.berserker.ui.add.news;
 
-import com.martnrico.berserker.ui.addwod.news.exercises.NewWodExercisesPresenter;
-import com.martnrico.berserker.ui.addwod.news.exercises.NewWodExercisesPresenterImpl;
-import com.martnrico.berserker.ui.addwod.news.exercises.NewWodExercisesView;
+import com.martnrico.berserker.ui.add.news.exercises.NewWodExercisesPresenter;
+import com.martnrico.berserker.ui.add.news.exercises.NewWodExercisesPresenterImpl;
+import com.martnrico.berserker.ui.add.news.exercises.NewWodExercisesView;
 
 import dagger.Module;
 import dagger.Provides;

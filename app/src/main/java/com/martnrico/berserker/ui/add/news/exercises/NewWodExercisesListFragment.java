@@ -17,7 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.martnrico.berserker.R;
+import com.martnrico.berserker.data.network.model.Entry.WodModel;
 import com.martnrico.berserker.data.network.model.ExerciseModel;
+import com.martnrico.berserker.ui.addwod.complete.NewWodCompleteFragment;
 import com.martnrico.berserker.ui.base.BaseFragment;
 import com.martnrico.berserker.ui.uicomponents.exercises.ExercisesAdapter;
 import com.martnrico.berserker.utils.ItemClickListener;
@@ -41,7 +43,6 @@ public class NewWodExercisesListFragment extends BaseFragment implements NewWodE
     @Inject
     NewWodExercisesPresenter<NewWodExercisesView> mPresenter;
 
-    private String mTypeWod;
     private ExercisesAdapter mExercisesAdapter;
 
     @BindView(R.id.exercise_recycler)
@@ -66,11 +67,6 @@ public class NewWodExercisesListFragment extends BaseFragment implements NewWodE
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.exercises_list_fragment, container, false);
         ButterKnife.bind(this, view);
-
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            mTypeWod = bundle.getString(EXERCISES_LIST_KEY);
-        }
 
         mExercisesAdapter = new ExercisesAdapter(new ArrayList<ExerciseModel>(), this);
 
@@ -109,10 +105,20 @@ public class NewWodExercisesListFragment extends BaseFragment implements NewWodE
             Animation animation_out = AnimationUtils.loadAnimation(getContext(), R.anim.fade_out);
             Animation animation_in = AnimationUtils.loadAnimation(getContext(), R.anim.fade_in);
             titleBar.startAnimation(animation_out);
-            titleBar.setText(mTypeWod);
+            titleBar.setText(typeWod);
             titleBar.setTextSize(20);
             titleBar.startAnimation(animation_in);
         }
+    }
+
+    @Override
+    public void navigateToCompleteNewWodFragment(WodModel wodModel) {
+        getBaseActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.add_wod_container, NewWodCompleteFragment.newInstance(wodModel),
+                        NewWodCompleteFragment.COMPLETE_WOD_KEY)
+                .addToBackStack(null)
+                .commit();
     }
 
     private void setListeners() {

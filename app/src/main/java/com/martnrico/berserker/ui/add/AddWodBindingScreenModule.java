@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.martnrico.berserker.di.component.NewWodExercisesComponent;
 import com.martnrico.berserker.di.component.PreviousWodComponent;
+import com.martnrico.berserker.ui.addwod.complete.NewWodCompleteFragment;
 import com.martnrico.berserker.ui.addwod.news.NewWodTypeWodListFragment;
 import com.martnrico.berserker.ui.addwod.news.exercises.NewWodExercisesListFragment;
 import com.martnrico.berserker.ui.addwod.previous.PreviousWodFragment;
@@ -37,5 +38,7 @@ public abstract class AddWodBindingScreenModule {
     @FragmentKey(PreviousWodFragment.class)
     abstract AndroidInjector.Factory<? extends Fragment> bindPreviousWodFragmentInjector(PreviousWodComponent.Builder builder);
 
+    @ContributesAndroidInjector
+    abstract NewWodCompleteFragment provideNewWodCompleteFragmentInjector();
 
 }

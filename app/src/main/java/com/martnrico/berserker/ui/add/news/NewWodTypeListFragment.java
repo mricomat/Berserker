@@ -1,4 +1,4 @@
-package com.martnrico.berserker.ui.addwod.news;
+package com.martnrico.berserker.ui.add.news;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.martnrico.berserker.R;
 import com.martnrico.berserker.data.network.model.UserModel;
 import com.martnrico.berserker.ui.base.BaseFragment;
-import com.martnrico.berserker.ui.addwod.news.exercises.NewWodExercisesListFragment;
+import com.martnrico.berserker.ui.add.news.exercises.NewWodExercisesListFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,17 +66,21 @@ public class NewWodTypeWodListFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         if (!mFirstInstance) {
-            TextView titleBar = (TextView) getBaseActivity().findViewById(R.id.title_screen);
-            if (titleBar != null) {
-                Animation animation_out = AnimationUtils.loadAnimation(getContext(), R.anim.fade_out);
-                Animation animation_in = AnimationUtils.loadAnimation(getContext(), R.anim.fade_in);
-                titleBar.startAnimation(animation_out);
-                titleBar.setText("WOD");
-                titleBar.setTextSize(30);
-                titleBar.startAnimation(animation_in);
-            }
+            setTitleBar();
         }
         mFirstInstance = false;
+    }
+
+    private void setTitleBar() {
+        TextView titleBar = (TextView) getBaseActivity().findViewById(R.id.title_screen);
+        if (titleBar != null) {
+            Animation animation_out = AnimationUtils.loadAnimation(getContext(), R.anim.fade_out);
+            Animation animation_in = AnimationUtils.loadAnimation(getContext(), R.anim.fade_in);
+            titleBar.startAnimation(animation_out);
+            titleBar.setText("WOD");
+            titleBar.setTextSize(30);
+            titleBar.startAnimation(animation_in);
+        }
     }
 
     @Override
