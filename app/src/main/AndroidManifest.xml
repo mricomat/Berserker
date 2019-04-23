@@ -36,7 +36,11 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.error.ErrorActivity" />
-        <activity android:name=".ui.addwod.AddWodActivity" />
+        <activity
+            android:name=".ui.add.AddWodActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>
