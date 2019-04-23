@@ -1,13 +1,14 @@
-package com.martnrico.berserker.ui.addwod;
+package com.martnrico.berserker.ui.add;
 
 import android.support.v4.app.Fragment;
 
 import com.martnrico.berserker.di.component.NewWodExercisesComponent;
 import com.martnrico.berserker.di.component.PreviousWodComponent;
-import com.martnrico.berserker.ui.addwod.complete.NewWodCompleteFragment;
-import com.martnrico.berserker.ui.addwod.news.NewWodTypeWodListFragment;
-import com.martnrico.berserker.ui.addwod.news.exercises.NewWodExercisesListFragment;
-import com.martnrico.berserker.ui.addwod.previous.PreviousWodFragment;
+import com.martnrico.berserker.di.module.ScreenModule;
+import com.martnrico.berserker.ui.add.complete.NewWodCompleteFragment;
+import com.martnrico.berserker.ui.add.news.NewWodTypeListFragment;
+import com.martnrico.berserker.ui.add.news.exercises.NewWodExercisesListFragment;
+import com.martnrico.berserker.ui.add.previous.PreviousWodFragment;
 
 import dagger.Binds;
 import dagger.Module;
@@ -30,15 +31,18 @@ public abstract class AddWodBindingScreenModule {
     @FragmentKey(NewWodExercisesListFragment.class)
     abstract AndroidInjector.Factory<? extends Fragment> bindNewWodExercisesFragmentInjector(NewWodExercisesComponent.Builder builder);
 
+    @ContributesAndroidInjector(modules = {
+            NewWodScreenBindingModule.class,
+            ScreenModule.class,
+    })
+    abstract NewWodCompleteFragment provideNewWodCompleteFragmentInjector();
+
     @ContributesAndroidInjector
-    abstract NewWodTypeWodListFragment provideNewWodTypeWodListFragmentInjector();
+    abstract NewWodTypeListFragment provideNewWodTypeWodListFragmentInjector();
 
     @Binds
     @IntoMap
     @FragmentKey(PreviousWodFragment.class)
     abstract AndroidInjector.Factory<? extends Fragment> bindPreviousWodFragmentInjector(PreviousWodComponent.Builder builder);
-
-    @ContributesAndroidInjector
-    abstract NewWodCompleteFragment provideNewWodCompleteFragmentInjector();
 
 }

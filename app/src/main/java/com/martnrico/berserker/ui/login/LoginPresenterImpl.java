@@ -37,7 +37,7 @@ public class LoginPresenterImpl<V extends LoginView> extends BasePresenterImpl<V
         super.onAttach(view);
         if (isNewRun) {
             getMvpView().showFadeIn();
-            isNewRun= false;
+            isNewRun = false;
         }
     }
 
@@ -60,10 +60,6 @@ public class LoginPresenterImpl<V extends LoginView> extends BasePresenterImpl<V
         getMvpView().showLoading();
 
         loginAuthentication(email, password);
-
-        // TODO ErrorHandler
-
-
     }
 
     private void loginAuthentication(String email, String password) {
@@ -107,7 +103,6 @@ public class LoginPresenterImpl<V extends LoginView> extends BasePresenterImpl<V
                         } else {
                             handleApiError(throwable);
                         }
-
                     }
                 }));
     }

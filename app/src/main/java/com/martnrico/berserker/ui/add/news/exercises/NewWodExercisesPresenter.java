@@ -1,4 +1,4 @@
-package com.martnrico.berserker.ui.addwod.news.exercises;
+package com.martnrico.berserker.ui.add.news.exercises;
 
 import com.martnrico.berserker.ui.base.BasePresenter;
 

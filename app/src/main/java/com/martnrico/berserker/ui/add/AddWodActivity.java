@@ -1,10 +1,12 @@
-package com.martnrico.berserker.ui.addwod;
+package com.martnrico.berserker.ui.add;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -12,8 +14,8 @@ import android.widget.TextView;
 
 import com.martnrico.berserker.R;
 import com.martnrico.berserker.data.network.model.UserModel;
-import com.martnrico.berserker.ui.addwod.news.NewWodTypeWodListFragment;
-import com.martnrico.berserker.ui.addwod.previous.PreviousWodFragment;
+import com.martnrico.berserker.ui.add.news.NewWodTypeListFragment;
+import com.martnrico.berserker.ui.add.previous.PreviousWodFragment;
 import com.martnrico.berserker.ui.base.BaseActivity;
 
 import butterknife.BindView;
@@ -82,22 +84,36 @@ public class AddWodActivity extends BaseActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
     protected void setListeners() {
         mReturnArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+                int count = getSupportFragmentManager().getBackStackEntryCount();
+                if (count == 0) {
+                    if (mButtonsContainer.getVisibility() != View.VISIBLE) {
+                        setTitleBar();
+                        setButtonsVisibilityVisible();
+                    }
+                }
             }
         });
 
         mNewWodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setButtonsVisibilityGone();
+
                 getSupportFragmentManager()
                         .beginTransaction()
                         .setCustomAnimations(R.anim.slide_left, R.anim.slide_right)
-                        .replace(R.id.add_wod_container, NewWodTypeWodListFragment.newInstance(mUserModel),
-                                NewWodTypeWodListFragment.ADD_WOD_DATA_KEY)
+                        .replace(R.id.add_wod_container, NewWodTypeListFragment.newInstance(mUserModel),
+                                NewWodTypeListFragment.ADD_WOD_DATA_KEY)
                         .addToBackStack(null)
                         .commit();
                 mCancelButton.setVisibility(View.VISIBLE);
@@ -133,7 +149,35 @@ public class AddWodActivity extends BaseActivity {
         });
     }
 
+    private void setButtonsVisibilityGone() {
+        Animation animation_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
+        Animation animation_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+        mButtonsContainer.startAnimation(animation_in);
+        mButtonsContainer.startAnimation(animation_out);
+        mButtonsContainer.setVisibility(View.GONE);
+    }
+
+    private void setButtonsVisibilityVisible() {
+        Animation animation_out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
+        Animation animation_in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+        mButtonsContainer.startAnimation(animation_out);
+        mButtonsContainer.startAnimation(animation_in);
+        mButtonsContainer.setVisibility(View.VISIBLE);
+    }
+
+    private void setTitleBar() {
+        if (!mTittleBar.getText().toString().equals("WOD")) {
+            Animation animation_out = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+            Animation animation_in = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+            mTittleBar.startAnimation(animation_out);
+            mTittleBar.setText("WOD");
+            mTittleBar.setTextSize(30);
+            mTittleBar.startAnimation(animation_in);
+        }
+    }
+
     private void navigatePreviousFragment(String previousPlace) {
+        mButtonsContainer.setVisibility(View.GONE);
         getSupportFragmentManager()
                 .beginTransaction()
                 .setCustomAnimations(R.anim.slide_left, R.anim.slide_right)

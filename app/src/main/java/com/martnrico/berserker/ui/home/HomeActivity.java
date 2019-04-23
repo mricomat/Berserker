@@ -21,7 +21,7 @@ import com.martnrico.berserker.R;
 import com.martnrico.berserker.data.network.model.Entry.EntryModel;
 import com.martnrico.berserker.data.network.model.HomeDataModel;
 import com.martnrico.berserker.data.network.model.UserModel;
-import com.martnrico.berserker.ui.addwod.AddWodActivity;
+import com.martnrico.berserker.ui.add.AddWodActivity;
 import com.martnrico.berserker.ui.base.BaseActivity;
 import com.martnrico.berserker.ui.uicomponents.customheader.CustomHeader;
 import com.martnrico.berserker.ui.uicomponents.customheader.CustomHeaderBehavior;

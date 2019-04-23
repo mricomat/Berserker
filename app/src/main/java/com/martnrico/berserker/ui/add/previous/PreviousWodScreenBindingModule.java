@@ -1,4 +1,4 @@
-package com.martnrico.berserker.ui.addwod.previous;
+package com.martnrico.berserker.ui.add.previous;
 
 import dagger.Module;
 import dagger.Provides;

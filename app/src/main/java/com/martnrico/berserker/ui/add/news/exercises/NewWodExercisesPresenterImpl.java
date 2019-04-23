@@ -1,4 +1,4 @@
-package com.martnrico.berserker.ui.addwod.news.exercises;
+package com.martnrico.berserker.ui.add.news.exercises;
 
 import com.martnrico.berserker.data.DataManager;
 import com.martnrico.berserker.data.network.model.Entry.WodModel;
@@ -55,16 +55,23 @@ public class NewWodExercisesPresenterImpl<V extends NewWodExercisesView> extends
 
     @Override
     public void onConfirmationButtonClick() {
-        WodModel wodModel = new WodModel();
-        wodModel.setTypeWod(mTypeWod);
-        wodModel.setDate(Calendar.getInstance().getTimeInMillis());
-        wodModel.setExerciseList(mExercisesNamesSelected);
+        if (!mExercisesNamesSelected.isEmpty()) {
+            WodModel wodModel = new WodModel();
+            wodModel.setTypeWod(mTypeWod);
+            wodModel.setDate(Calendar.getInstance().getTimeInMillis());
+            wodModel.setExerciseList(mExercisesNamesSelected);
 
-        getMvpView().navigateToCompleteNewWodFragment(wodModel);
+            // TODO COMPROBAR SI HAY FRAGMENT EN EL STACK Y ES COMPLETE, SI ES ASI LLAMAR AL ACTIVITY RESULT Y MANDAR DATA
+
+
+            getMvpView().navigateToCompleteNewWodFragment(wodModel);
+        }
     }
 
     @Override
     public void changeRecyclerItemView() {
 
     }
+
+
 }

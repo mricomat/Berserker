@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Martín Rico Martínez on 07/03/2019.
  */
-public class NewWodTypeWodListFragment extends BaseFragment {
+public class NewWodTypeListFragment extends BaseFragment {
 
     public static final String ADD_WOD_DATA_KEY = "add_wod_data_key";
 
@@ -46,10 +46,10 @@ public class NewWodTypeWodListFragment extends BaseFragment {
 
     private boolean mFirstInstance = true;
 
-    public static NewWodTypeWodListFragment newInstance(UserModel userModel) {
+    public static NewWodTypeListFragment newInstance(UserModel userModel) {
         Bundle args = new Bundle();
         args.putParcelable(ADD_WOD_DATA_KEY, userModel);
-        NewWodTypeWodListFragment fragment = new NewWodTypeWodListFragment();
+        NewWodTypeListFragment fragment = new NewWodTypeListFragment();
         fragment.setArguments(args);
         return fragment;
     }

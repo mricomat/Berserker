@@ -2,10 +2,10 @@ package com.martnrico.berserker.di.component;
 
 import android.os.Bundle;
 
-import com.martnrico.berserker.ui.addwod.news.NewWodScreenBindingModule;
+import com.martnrico.berserker.ui.add.NewWodScreenBindingModule;
 import com.martnrico.berserker.di.module.ScreenModule;
 import com.martnrico.berserker.di.ScreenScope;
-import com.martnrico.berserker.ui.addwod.news.exercises.NewWodExercisesListFragment;
+import com.martnrico.berserker.ui.add.news.exercises.NewWodExercisesListFragment;
 
 import dagger.BindsInstance;
 import dagger.Subcomponent;

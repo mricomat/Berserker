@@ -1,9 +1,11 @@
 package com.martnrico.berserker.ui.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
 import com.martnrico.berserker.ui.error.ErrorActivity;
@@ -79,6 +81,16 @@ public abstract class BaseActivity extends DaggerAppCompatActivity implements Ba
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
         outState.putString(INSTANCE_ID_KEY, mInstanceId);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void startActivityFromFragment(Fragment fragment, Intent intent, int requestCode) {
+        super.startActivityFromFragment(fragment, intent, requestCode);
     }
 
     @LayoutRes

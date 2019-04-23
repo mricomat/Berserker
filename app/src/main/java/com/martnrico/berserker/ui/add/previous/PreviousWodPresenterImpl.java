@@ -1,9 +1,9 @@
-package com.martnrico.berserker.ui.addwod.previous;
+package com.martnrico.berserker.ui.add.previous;
 
 import com.martnrico.berserker.data.DataManager;
 import com.martnrico.berserker.data.network.model.Entry.EntryModel;
 import com.martnrico.berserker.data.network.model.Entry.PagedModel;
-import com.martnrico.berserker.ui.addwod.AddWodActivity;
+import com.martnrico.berserker.ui.add.AddWodActivity;
 import com.martnrico.berserker.ui.base.BasePresenterImpl;
 import com.martnrico.berserker.utils.DisposableManager;
 

@@ -1,9 +1,11 @@
-package com.martnrico.berserker.ui.addwod.news.exercises;
+package com.martnrico.berserker.ui.add.news.exercises;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +21,7 @@ import android.widget.TextView;
 import com.martnrico.berserker.R;
 import com.martnrico.berserker.data.network.model.Entry.WodModel;
 import com.martnrico.berserker.data.network.model.ExerciseModel;
-import com.martnrico.berserker.ui.addwod.complete.NewWodCompleteFragment;
+import com.martnrico.berserker.ui.add.complete.NewWodCompleteFragment;
 import com.martnrico.berserker.ui.base.BaseFragment;
 import com.martnrico.berserker.ui.uicomponents.exercises.ExercisesAdapter;
 import com.martnrico.berserker.utils.ItemClickListener;
@@ -32,6 +34,9 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.martnrico.berserker.ui.add.complete.NewWodCompleteFragment.COMPLETE_WOD_BOOl_KEY;
+import static com.martnrico.berserker.ui.add.complete.NewWodCompleteFragment.COMPLETE_WOD_DATA_KEY;
 
 /**
  * Created by Martín Rico Martínez on 11/03/2019.
@@ -113,12 +118,28 @@ public class NewWodExercisesListFragment extends BaseFragment implements NewWodE
 
     @Override
     public void navigateToCompleteNewWodFragment(WodModel wodModel) {
-        getBaseActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.add_wod_container, NewWodCompleteFragment.newInstance(wodModel),
-                        NewWodCompleteFragment.COMPLETE_WOD_KEY)
-                .addToBackStack(null)
-                .commit();
+        FragmentManager fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+
+        fragmentManager.popBackStack();
+        fragmentManager.popBackStack();
+
+        if (fragmentManager.getBackStackEntryCount() != 3) {
+            fragmentManager
+                    .beginTransaction()
+                    .replace(R.id.add_wod_container, NewWodCompleteFragment.newInstance(wodModel),
+                            COMPLETE_WOD_DATA_KEY)
+                    .addToBackStack(null)
+                    .commit();
+        } else {
+            Bundle args = new Bundle();
+            args.putParcelable(COMPLETE_WOD_DATA_KEY, wodModel);
+            args.putBoolean(COMPLETE_WOD_BOOl_KEY, true);
+
+            Fragment fragment = fragmentManager.findFragmentByTag(NewWodCompleteFragment.COMPLETE_WOD_DATA_KEY);
+            if (fragment != null) {
+                fragment.setArguments(args);
+            }
+        }
     }
 
     private void setListeners() {

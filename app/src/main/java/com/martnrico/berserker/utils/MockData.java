@@ -76,31 +76,37 @@ public final class MockData {
         ExerciseModel exerciseModel = new ExerciseModel();
         exerciseModel.setDescription("Lorem ipsum dolor sit amet consectetur adipiscing elit risus posuere, quisque et fusce inceptos mi ad justo congue");
         exerciseModel.setName("Pull ups");
+        exerciseModel.setUrlBackgroundImg("https://i.ibb.co/n3X207Z/pull-ups.jpg");
         exerciseList.add(exerciseModel);
 
         exerciseModel = new ExerciseModel();
         exerciseModel.setDescription("Lorem ipsum dolor sit amet consectetur adipiscing elit risus posuere, quisque et fusce inceptos mi ad justo congue");
         exerciseModel.setName("Push ups");
+        exerciseModel.setUrlBackgroundImg("https://i.ibb.co/LNkMxKK/push-up.jpg");
         exerciseList.add(exerciseModel);
 
         exerciseModel = new ExerciseModel();
         exerciseModel.setDescription("Lorem ipsum dolor sit amet consectetur adipiscing elit risus posuere, quisque et fusce inceptos mi ad justo congue");
         exerciseModel.setName("Thrusters");
+        exerciseModel.setUrlBackgroundImg("https://i.ibb.co/cvmtTPr/Thusters.jpg");
         exerciseList.add(exerciseModel);
 
         exerciseModel = new ExerciseModel();
         exerciseModel.setDescription("Lorem ipsum dolor sit amet consectetur adipiscing elit risus posuere, quisque et fusce inceptos mi ad justo congue");
         exerciseModel.setName("Over Head Squat");
+        exerciseModel.setUrlBackgroundImg("https://i.ibb.co/nmTLrFh/ohs.jpg");
         exerciseList.add(exerciseModel);
 
         exerciseModel = new ExerciseModel();
         exerciseModel.setDescription("Lorem ipsum dolor sit amet consectetur adipiscing elit risus posuere, quisque et fusce inceptos mi ad justo congue");
         exerciseModel.setName("Run");
+        exerciseModel.setUrlBackgroundImg("https://i.ibb.co/J5Sftv5/ru.jpg");
         exerciseList.add(exerciseModel);
 
         exerciseModel = new ExerciseModel();
         exerciseModel.setDescription("Lorem ipsum dolor sit amet consectetur adipiscing elit risus posuere, quisque et fusce inceptos mi ad justo congue");
         exerciseModel.setName("Double Unders");
+        exerciseModel.setUrlBackgroundImg("https://i.ibb.co/5MwghDs/du.jpg");
         exerciseList.add(exerciseModel);
 
         return exerciseList;

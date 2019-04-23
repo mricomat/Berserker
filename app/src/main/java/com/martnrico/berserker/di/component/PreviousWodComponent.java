@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import com.martnrico.berserker.di.ScreenScope;
 import com.martnrico.berserker.di.module.ScreenModule;
-import com.martnrico.berserker.ui.addwod.previous.PreviousWodFragment;
-import com.martnrico.berserker.ui.addwod.previous.PreviousWodScreenBindingModule;
+import com.martnrico.berserker.ui.add.previous.PreviousWodFragment;
+import com.martnrico.berserker.ui.add.previous.PreviousWodScreenBindingModule;
 
 import dagger.BindsInstance;
 import dagger.Subcomponent;

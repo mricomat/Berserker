@@ -1,9 +1,5 @@
 package com.martnrico.berserker.ui.login;
 
-import com.martnrico.berserker.ui.login.LoginPresenter;
-import com.martnrico.berserker.ui.login.LoginPresenterImpl;
-import com.martnrico.berserker.ui.login.LoginView;
-
 import dagger.Module;
 import dagger.Provides;
 

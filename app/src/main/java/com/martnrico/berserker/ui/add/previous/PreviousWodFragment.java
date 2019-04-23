@@ -1,4 +1,4 @@
-package com.martnrico.berserker.ui.addwod.previous;
+package com.martnrico.berserker.ui.add.previous;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

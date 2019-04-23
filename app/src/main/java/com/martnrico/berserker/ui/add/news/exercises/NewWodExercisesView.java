@@ -1,4 +1,4 @@
-package com.martnrico.berserker.ui.addwod.news.exercises;
+package com.martnrico.berserker.ui.add.news.exercises;
 
 import com.martnrico.berserker.data.network.model.Entry.WodModel;
 import com.martnrico.berserker.data.network.model.ExerciseModel;
