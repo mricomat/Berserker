@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.martnrico.berserker.R;
 import com.martnrico.berserker.data.network.model.ExerciseModel;
 import com.martnrico.berserker.utils.ItemClickListener;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,8 +43,7 @@ public class ExercisesSquareViewHolder extends RecyclerView.ViewHolder {
 
         mExerciseTitle.setText(exerciseModel.getName());
 
-        //mExerciseBackgroun.setIma...
-
+        Picasso.get().load(exerciseModel.getUrlBackgroundImg()).into(mExerciseBackground);
         mItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

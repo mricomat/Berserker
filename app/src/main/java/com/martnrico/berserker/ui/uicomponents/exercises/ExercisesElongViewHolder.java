@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.martnrico.berserker.R;
 import com.martnrico.berserker.data.network.model.ExerciseModel;
 import com.martnrico.berserker.utils.ItemClickListener;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +27,7 @@ public class ExercisesElongViewHolder extends RecyclerView.ViewHolder {
     TextView mExerciseDetail;
 
     @BindView(R.id.exercise_background)
-    ImageView mExerciseBackgroun;
+    ImageView mExerciseBackground;
 
     private View mItemView;
 
@@ -48,8 +49,7 @@ public class ExercisesElongViewHolder extends RecyclerView.ViewHolder {
         mExerciseTitle.setText(exerciseModel.getName());
         mExerciseDetail.setText(exerciseModel.getDescription());
 
-        //mExerciseBackgroun.setIma...
-
+        Picasso.get().load(exerciseModel.getUrlBackgroundImg()).into(mExerciseBackground);
         mItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
