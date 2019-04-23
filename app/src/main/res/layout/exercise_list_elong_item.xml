@@ -2,9 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="110dp"
-    android:layout_marginStart="5dp"
-    android:layout_marginEnd="5dp"
+    android:layout_height="130dp"
     android:layout_marginBottom="5dp"
     android:orientation="vertical">
 
@@ -15,6 +13,13 @@
         android:scaleType="fitXY"
         android:src="@drawable/back_header"
         tools:src="@drawable/back_header" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:alpha="0.15">
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/selected_container"
@@ -52,7 +57,7 @@
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/roboto_medium"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="14sp"
             tools:text="Lorem ipsum dolor sit amet consectetur adipiscing elit risus posuere, quisque et fusce inceptos mi ad justo congue" />
 
     </LinearLayout>

@@ -50,75 +50,48 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp">
-
-        <Button
-            android:id="@+id/box_wod_button"
-            android:layout_width="62dp"
-            android:layout_height="62dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerInParent="true"
-            android:background="@drawable/box_wod_button" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/box_wod_button"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Box"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </RelativeLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/new_wod_button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="150dp"
-            android:background="@drawable/new_wod_button" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="New"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-
-    <RelativeLayout
         android:id="@+id/buttons_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="235dp"
-        android:layout_marginEnd="70dp">
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp">
+
+            <Button
+                android:id="@+id/box_wod_button"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/box_wod_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/box_wod_button"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Box"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/old_wod_button"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
-                android:background="@drawable/older_button" />
+                android:id="@+id/new_wod_button"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/new_wod_button" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -126,36 +99,72 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Old"
+                android:text="New"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+
+        <RelativeLayout
+            android:id="@+id/old_fav_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="235dp"
+            android:layout_marginEnd="70dp">
 
-            <Button
-                android:id="@+id/fav_button"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
-                android:background="@drawable/fav_button" />
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/roboto_regular"
-                android:text="Fav"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-        </LinearLayout>
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/old_wod_button"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="@drawable/older_button" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Old"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/fav_button"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:background="@drawable/fav_button" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Fav"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </RelativeLayout>
+
+
 
     <FrameLayout
         android:id="@+id/add_wod_container"
