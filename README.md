@@ -10,6 +10,10 @@ The design it's all done in AdobeXD.
 
 This repository contains an example app that implements MVP arquitecture using Dagger2, RxJava and Retrofit using Java.
 
+Here is just a small example of how is looking the app now:
+
+<img src="Berserker_gid_record.gif" width="300" height="550"/>
+
 ## Library reference resources:
 1. RxJava2: https://github.com/ReactiveX/RxJava
 2. Dagger2: https://github.com/google/dagger
